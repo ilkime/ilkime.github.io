@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+	--overlay-color: #F1CA89;
+}
+
+
+
+
+
+*{ /*universal astrix for every element in my index.html */
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+.showcase{
+	position: absolute;
+	right: 0;
+	width: 100%;
+	min-height: 100vh; /*it will not get smaller than this size even if i shrink the size of the website */
+	padding: 100px;
+	display: flex; /*aligned them */
+	justify-content: space-between; /*to put space btw. even if i resize the website*/
+	align-items: center;
+	background-color: black;
+	color: white;
+	z-index: 2; /*showcase is always in front of the menu */
+	transition: 0.5s;
+}
+
+.showcase.active{ /*making the side bar move to left when i click*/
+	right: 300px;
+}
+
+
+.showcase header{
+	position: absolute; /*took it out of flex alignment*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px; /* 40 px top and bottom, 100px L-R*/
+	z-index: 1000; /*text is behind*/
+	display: flex; /*to put the elements side by side , in this case toggle and the main titel*/
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.logo{
+	text-transform: uppercase;
+	cursor:pointer;
+}
+
+.toggle{
+	position: relative;
+	height: 60px;
+	width: 60px;
+	background: url('menu.png');
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor:pointer; /*mouse when come on it*/
+}
+
+.toggle.active{ /*no space btw we are looking for a class of active on the toggle*/
+	background: url('close.png');
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+.showcase video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /*making the video full screen*/
+	opacity: 0.8;
+}
+
+.social img{
+
+	width: 35px;
+	height: 30px;
+}
+
+.overlay{ /*place over everything , a warm color on top of the whole video*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--overlay-color); /*easy to change color according to overlay color which is at the top*/
+	mix-blend-mode: overlay;
+}
+
+
+.text{ /*now text is on top of the video*/
+	position: relative;
+	z-index: 10;
+}
+
+.text h2{
+	font-size: 5em; /*parent font size x5*/
+	font-weight: 800; /*bolder*/
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.text h3{
+	font-size: 4em; /*parent font size x5*/
+	font-weight: 700; /*bolder*/
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.text p{
+	font-size:1.1em;
+	margin: 20px 0; /*push it a bit down*/
+	max-width: 700px;
+	font-weight: 700;
+}
+
+.text a{
+	display: inline-block;
+	font-size: 1em;
+	background-color: white ;
+	padding: 10px 30px;
+	text-decoration: none; /*get rid of underline*/
+	color: #111;
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.2s;
+	font-weight: 500;
+}
+
+.text a:hover{
+	letter-spacing: 6px ;
+}
+
+.social{ /*icons*/
+	position: absolute;
+	bottom:20px;
+	z-index:10;
+	display: flex; /*horizontal*/
+	justify-content: center;
+	align-items: center;
+}
+
+.social li{
+	list-style: none; /*no more bullet points*/
+}
+
+.social li a {
+	display: inline-block; /*put them next to each other*/
+	margin-right: 20px; /*space btw each icon*/
+	
+	transition: 0.5s;
+}
+
+.social li a:hover{
+	transform:  translateY(-15px); /* to y axis jumps/moves -15px */
+}
+
+
+.menu{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px; /*according to showcase*/
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu ul{
+	position: relative;
+	list-style: none; /*no bullet points*/
+}
+
+.menu ul li a {
+	text-decoration: none;
+	font-size: 24px;
+	color: black;
+
+}
+
+.menu ul li a:hover{
+	color: var(--overlay-color);
+}
+
+
+@media(max-width: 798px) { /*for smaller screens adjusting the sizes*/
+	.showcase, 
+	.showcase header{
+		padding: 40px;
+	}
+
+	.text h2{
+		font-size: 3em;
+	}
+
+	.text h3{
+		font-size: 2em ;
+	}
+}

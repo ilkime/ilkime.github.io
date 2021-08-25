@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+	<title>Camping Journey</title>
+</head>
+<body>
+
+	<section class="showcase"> <!--grouped content shows a single theme (entry) instead of div-->
+
+		<header>
+			<h2 class="logo">Camp of Your Life</h2>
+			<div class="toggle "></div>
+		</header>
+
+		<video src="videos/camping_mainpage.mp4" muted loop autoplay></video> 
+
+		<div class="overlay"></div>
+		
+		<div class="text">
+			<h2>Never Stop</h2>
+			<h3>Exploring the World</h3>
+			<p>If you want to try wilderness camping, but find the whole idea rather terrifying, don't worry. You are not alone. As terryfying camping can be, it has it's own charms. Explore our blog and find the wild side of you, who may want to go camping one day.</p>
+			<a href="campsite.html">Explore</a>
+		</div>
+
+		<ul class="social">
+			<li><a href="https://www.youtube.com/"><img src="images/youtube.png" alt=""></a></li>
+			<li><a href="https://www.facebook.com/"><img src="images/facebook.png" alt=""></a></li>
+			<li><a href="https://www.instagram.com/"><img src="images/instagram.png" alt=""></a></li>
+		</ul>
+
+	</section>
+
+		<div class="menu">
+
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="campsite.html">Blog</a></li>
+				<li><a href="CSS-My Site/index.html">About Me</a></li>
+				<li><a href="mailto:ilkimersem@gmail.com">Contact</a></li>
+			</ul>
+
+		</div>
+
+<!--small JS addition for a responsive hamburger-->
+		<script> 
+			
+			const menuToggle = document.querySelector('.toggle')
+			const showcase = document.querySelector('.showcase')
+
+			menuToggle.addEventListener('click', () => { //when i clickt to hamburger//
+				menuToggle.classList.toggle('active')
+				showcase.classList.toggle('active')
+			})
+
+		</script>
+
+</body>
+</html>

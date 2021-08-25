@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+	--overlay-color: #F1CA89;
+}
+
+
+
+
+
+*{ /*universal astrix for every element in my index.html */
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+.showcase{
+	position: absolute;
+	right: 0;
+	width: 100%;
+	min-height: 100vh; /*it will not get smaller than this size even if i shrink the size of the website */
+	padding: 100px;
+	
+	justify-content: space-between; /*to put space btw. even if i resize the website*/
+	align-items: center;
+	background-color: black;
+	color: white;
+	z-index: 2; /*showcase is always in front of the menu */
+	transition: 0.5s;
+}
+
+.showcase.active{ /*making the side bar*/
+	right: 300px;
+}
+
+
+.showcase header{
+	position: absolute; /*took it out of flex alignment*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px; /* 40 px top and bottom, 100px L-R*/
+	z-index: 1000; /*text is behind*/
+	display: flex; /*to put the elements side by side , in this case toggle and the main titel*/
+	align-items: center;
+	justify-content: space-between;
+}
+
+/*-------------------NEWS HTML------------------ */
+.news {
+
+	font-size: 70px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	margin-top:100px;
+	z-index: 10;
+	position: relative; /*put it in front of the video*/
+	text-align: center;
+}
+
+.news h1{
+	margin-bottom: 100px;
+}
+
+.news h2{
+	font-size: 20px;
+	text-align: left;
+}
+.news p{
+
+	font-size: 20px;
+	text-align: left;
+	padding: 10px 10px;
+}
+
+.wrapper a{
+
+	text-decoration: none;
+	color: #CC9B6D;
+	font-weight: 800;
+	letter-spacing: 0.8px;
+
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 3px;
+	grid-auto-rows: minmax(80px,auto);
+
+}
+
+.news div div{
+	background-color: rgba(200, 194, 188,0.4);
+	border-radius: 15px;
+	max-width: 100vw;
+	padding: 40px 80px;
+	margin: 30px;
+	width: 400px;
+	height: auto;
+	
+}
+
+
+
+
+
+/*------------------------------------------------*/
+
+
+
+/*-----------CAMP SITE ----------------*/
+
+.camp {
+
+
+
+	font-size: 70px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	margin-top:100px;
+	z-index: 10;
+	position: relative; /*put it in front of the video*/
+	text-align: center;
+}
+
+.camp h1{
+	font-size: 60px;
+	border: white 2px solid;
+	width: 100%;
+}
+
+
+
+.camp img{
+
+	max-width: 40%;
+	opacity: 0.9;
+	margin-right: 20px;
+	margin-top: 100px;
+}
+
+.camp h3{
+
+	font-size: 30px;
+	text-align: left;
+	margin-top: 100px;
+}
+
+.item-card{
+	display: flex;
+	max-width: 80vw;
+
+}
+
+.item-card p{
+	font-size: 25%;
+	text-align: left;
+
+}
+
+
+
+/*-------------------------------------*/
+
+.logo{
+	text-transform: uppercase;
+	cursor:pointer;
+}
+
+.toggle{
+	position: relative;
+	height: 60px;
+	width: 60px;
+	background: url('menu.png');
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor:pointer; /*mouse when come on it*/
+}
+
+.toggle.active{ /*no space btw we are looking for a class of active on the toggle*/
+	background: url('close.png');
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+
+}
+
+.showcase video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /*making the video full screen*/
+	opacity: 0.7;
+}
+
+.social img{
+
+	width: 35px;
+	height: 30px;
+}
+
+.overlay{ /*place over everything , a warm color on top of the whole video*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--overlay-color); /*easy to change color according to overlay color which is at the top*/
+	mix-blend-mode: overlay;
+}
+
+
+.text{ /*now text is on top of the video*/
+	position: relative;
+	z-index: 10;
+}
+
+.text h2{
+	font-size: 5em; /*parent font size x5*/
+	font-weight: 800; /*bolder*/
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.text h3{
+	font-size: 4em; /*parent font size x5*/
+	font-weight: 700; /*bolder*/
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.text p{
+	font-size:1.1em;
+	margin: 20px 0; /*push it a bit down*/
+	font-weight: 400;
+	max-width: 700px;
+}
+
+.text a{
+	display: inline-block;
+	font-size: 1em;
+	background-color: white ;
+	padding: 10px 30px;
+	text-decoration: none; /*get rid of underline*/
+	color: #111;
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.2s;
+	font-weight: 500;
+}
+
+.text a:hover{
+	letter-spacing: 6px ;
+}
+
+.social{
+	position: absolute;
+	bottom:20px;
+	z-index:10;
+	display: flex; /*horizontal*/
+	justify-content: center;
+	align-items: center;
+}
+
+.social li{
+	list-style: none; /*no more bullet points*/
+}
+
+.social li a {
+	display: inline-block;
+	margin-right: 20px; /*space btw each icon*/
+	
+	transition: 0.5s;
+}
+
+.social li a:hover{
+	transform:  translateY(-15px); /* to y axis jumps 15px */
+}
+
+
+.menu{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px; /*according to showcase*/
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu ul{
+	position: relative;
+	list-style: none; /*no bullet points*/
+}
+
+.menu ul li a {
+	text-decoration: none;
+	font-size: 24px;
+	color: black;
+
+}
+
+.menu ul li a:hover{
+	color: var(--overlay-color);
+}
+
+
+@media(max-width: 1500px) { /*for smaller screens adjusting the sizes*/
+	.showcase, 
+	.showcase header{
+		padding: 40px;
+	}
+
+	.text h2{
+		font-size: 3em;
+	}
+
+	.text h3{
+		font-size: 2em ;
+	}
+	.wrapper{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.
+}
+
+
+/*-----news part-----*/
+@media screen and (max-width: 850px){ /*when screen gets smaller it will show 1 news per row*/
+	.wrapper{
+		grid-template-columns: 1fr;
+	}
+}
+

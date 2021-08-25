@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>News</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+<section class="showcase"> <!--grouped content shows a single theme (entry) instead of div-->
+
+		<header>
+			<h2 class="logo">Camp of Your Life</h2>
+			<div class="toggle "></div>
+		</header>
+
+		<video src="videos/camping_mainpage.mp4" muted loop autoplay></video>
+
+
+<!--NEWS SECTION CODE-->
+		<section class="news">
+				<h1>NEWS</h1>
+
+				<div class="wrapper">
+					<div id="div1">
+						<h2>Price Comparison: How Much a Camping Holiday in Europe Costs</h2>
+						<p>The European camping market has seen a sharp increase in the number of overnight stays over the past few years. We have assessed the prices of 23,000 European campsites.On average,...<a href="https://www.camping.info/magazin/en/price-comparison-how-much-a-camping-holiday-in-europe-costs">Read article > </a></p>
+					</div>
+				
+					<div id="div2">
+						<h2>A New Record: 34.5 Million Nights Spent on Campsites in Germany</h2>
+						<p>Germany has never seen more campers: The country saw an increase of 11.29% in comparison to last year and 41% since 2010. Of the 16 federal states, Bavaria is the most popular camping destination, with 6.2 million overnight stays,...<a href="https://www.camping.info/magazin/en/a-new-record-34-5-million-nights-spent-on-campsites-in-germany">Read article ></a></p>
+					</div>
+
+					<div id="div3">
+						<h2>Camping Cabopino: Chasing the Sun to Southern Spain</h2>
+						<p>Going to Christmas markets, buying presents, and looking forward to the holiday season is lovely, but we can’t help but miss summer! Almost nothing compares to waking up on holiday, seeing the bright blue sky, and heading right to the beach. Do you feel the same? Then ...<a href="https://www.camping.info/magazin/en/camping-cabopino-chasing-the-sun-to-southern-spain">Read article ></a></p>
+					</div>
+				</div>
+
+		
+
+		</section>
+
+</section>
+
+<div class="menu">
+
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="campsite.html">Blog</a></li>
+				<li><a href="CSS-My Site/index.html">About Me</a></li>
+				<li><a href="mailto:ilkimersem@gmail.com">Contact</a></li>
+			</ul>
+
+		</div>
+
+<!--small JS addition  responsive hamburger-->
+		<script> 
+			
+			const menuToggle = document.querySelector('.toggle')
+			const showcase = document.querySelector('.showcase')
+
+			menuToggle.addEventListener('click', () => {
+				menuToggle.classList.toggle('active')
+				showcase.classList.toggle('active')
+			})
+
+		</script>
+</body>
+</html>
